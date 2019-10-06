@@ -31,7 +31,7 @@ namespace Task1_18013130GADE
             foreach (Unit u in map.Units)
             {
                 if (GetType() == typeof(MeleeUnit))
-                {
+                {//creating buttons
                     int start_x; int start_y;
                     start_x = groupBox1.Location.X;
                     start_y = groupBox1.Location.Y;

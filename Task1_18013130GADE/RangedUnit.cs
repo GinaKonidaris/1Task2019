@@ -13,7 +13,7 @@ namespace Task1_18013130GADE
 
 
         public override void Move(Direction d)
-        {
+        {//Moves MeleeUnit on map
             switch (d)
             {
                 case Direction.North:
@@ -52,7 +52,7 @@ namespace Task1_18013130GADE
         }
 
         private int DistanceTo(Unit u)
-        {
+        {//Checks the distance between MeleeUnit and Ranged Unit
             if (u.GetType() == typeof(MeleeUnit))
             {
                 MeleeUnit n = (MeleeUnit)u;
@@ -66,7 +66,7 @@ namespace Task1_18013130GADE
         }
 
         public Direction DirectionTo(Unit u)
-        {
+        {// Changes the direction of the Rangedunit
             if (u.GetType() == typeof(RangedUnit))
             {
                 RangedUnit n = (RangedUnit)u;
@@ -93,7 +93,7 @@ namespace Task1_18013130GADE
             }
         }
         public override void Combat(Unit u)
-        {
+        {//starts combat
             if (u.GetType() == typeof(RangedUnit))
             {
                 health -= ((RangedUnit)u).attack;
@@ -108,7 +108,7 @@ namespace Task1_18013130GADE
 
         }
         public override bool Inranged(Unit u)
-        {
+        {//Checks to see if Unit is in range
             if (u.GetType() == typeof(RangedUnit))
             {
                 RangedUnit n = (RangedUnit)u;
@@ -131,7 +131,7 @@ namespace Task1_18013130GADE
             foreach (Unit u in units)
             {
                 if (((RangedUnit)u).team == team)
-                {
+                {//checks to see the closet unit to the button, and moves the button towards it.
                     if (DistanceTo(u) < closestDistance)
                     {
                         closest = u;
@@ -142,7 +142,7 @@ namespace Task1_18013130GADE
             return closest;
         }
         public override bool Isdead()
-        {
+        {//Checks if Ranged Unit is alive, if dead the isdead action will start
             if (health < +0)
             {
                 return false;
@@ -153,7 +153,7 @@ namespace Task1_18013130GADE
             }
         }
         public override string Tostring()
-        {
+        {// sends information to text box on MeleeUnit
             return "RU" + xpos + "," + ypos + "," + health + "," + Name + team;
         }
 

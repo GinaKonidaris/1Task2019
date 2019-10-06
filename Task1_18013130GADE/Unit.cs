@@ -9,7 +9,7 @@ namespace Task1_18013130GADE
     public enum Direction { North, East, South, West };
 
     public abstract class Unit
-    {
+    {   //Base class that Melee Unit as well as RangedUnit dervies from
         protected int xpos;
         protected int ypos;
         protected int attack;
